@@ -7,7 +7,7 @@ System.register(["../views/index", "../models/index", "../helpers/Decorators/ind
         return c > 3 && r && Object.defineProperty(target, key, r), r;
     };
     var __moduleName = context_1 && context_1.id;
-    var index_1, index_2, index_3, NegociacaoController, DiasDaSemana;
+    var index_1, index_2, index_3, index_4, NegociacaoController, DiasDaSemana;
     return {
         setters: [
             function (index_1_1) {
@@ -18,6 +18,7 @@ System.register(["../views/index", "../models/index", "../helpers/Decorators/ind
             },
             function (index_3_1) {
                 index_3 = index_3_1;
+                index_4 = index_3_1;
             }
         ],
         execute: function () {
@@ -26,9 +27,6 @@ System.register(["../views/index", "../models/index", "../helpers/Decorators/ind
                     this._negociacoes = new index_2.Negociacoes();
                     this._negociacoesView = new index_1.NegociacoesView('#negociacoesView', true);
                     this._mensagemView = new index_1.MensagemView('#mensagemView', true);
-                    this._inputData = $('#data');
-                    this._inputQuantidade = $('#quantidade');
-                    this._inputValor = $('#valor');
                     this._negociacoesView.update(this._negociacoes);
                 }
                 adiciona(event) {
@@ -46,7 +44,18 @@ System.register(["../views/index", "../models/index", "../helpers/Decorators/ind
                 validaDiaUtil(data) {
                     return data.getDay() != DiasDaSemana.Domingo && data.getDay() != DiasDaSemana.Sabado;
                 }
+                importaDados() {
+                }
             };
+            __decorate([
+                index_4.domInject('#data')
+            ], NegociacaoController.prototype, "_inputData", void 0);
+            __decorate([
+                index_4.domInject('#quantidade')
+            ], NegociacaoController.prototype, "_inputQuantidade", void 0);
+            __decorate([
+                index_4.domInject('#valor')
+            ], NegociacaoController.prototype, "_inputValor", void 0);
             __decorate([
                 index_3.logarTempoDeExecucao()
             ], NegociacaoController.prototype, "adiciona", null);
