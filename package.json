@@ -7,10 +7,10 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "compile": "tsc",
     "watch": "tsc -w",
-    "server": "lite-server --basedir=app",
+    "server": "lite-server --baseDir=app",
     "start": "concurrently \"npm run watch\" \"npm run server\""
   },
-  "author": "Henrique Kirschke",
+  "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/jquery": "^2.0.42",

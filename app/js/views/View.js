@@ -1,4 +1,4 @@
-System.register(["../helpers/Decorators/index"], function (exports_1, context_1) {
+System.register(["../helpers/decorators/index"], function (exports_1, context_1) {
     "use strict";
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -18,6 +18,7 @@ System.register(["../helpers/Decorators/index"], function (exports_1, context_1)
             View = class View {
                 constructor(seletor, escapar = false) {
                     this._elemento = $(seletor);
+                    this._escapar = escapar;
                 }
                 update(model) {
                     let template = this.template(model);

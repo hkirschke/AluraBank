@@ -1,10 +1,11 @@
-import { View } from './View';  
+import { View } from './View';
 import { Negociacoes } from '../models/Negociacoes';
 
- export class NegociacoesView  extends  View<Negociacoes>{
+export class NegociacoesView extends View<Negociacoes> {
 
     template(model: Negociacoes): string {
-      return `
+
+        return `
         <table class="table table-hover table-bordered">
             <thead>
                 <tr>
@@ -16,19 +17,21 @@ import { Negociacoes } from '../models/Negociacoes';
             </thead>
 
             <tbody>
-            ${model.paraArray().map(Negociacao => `
-            <tr>
-               <td>${Negociacao.data.getDate()}/${Negociacao.data.getMonth() + 1}/${Negociacao.data.getFullYear()}</td>
-               <td>${Negociacao.quantidade}</td>
-               <td>${Negociacao.valor}</td>
-               <td>${Negociacao.volume}</td>
-               `).join('')}
-            </tr>
+                ${model.paraArray().map(negociacao => 
+                    `
+                        <tr>
+                            <td>${negociacao.data.getDate()}/${negociacao.data.getMonth() +1}/${negociacao.data.getFullYear()}</td>
+                            <td>${negociacao.quantidade}</td>
+                            <td>${negociacao.valor}</td>
+                            <td>${negociacao.volume}</td>
+                        <tr>
+                    `   
+                ).join('')}            
             </tbody>
 
             <tfoot>
             </tfoot>
-        </table>               
-        `
+        </table>
+        `;
     }
-  }
+}
