@@ -1,5 +1,4 @@
-export interface Imprimivel{
+export interface Imprimivel {
 
-   paraTexto(): void;
-
+    paraTexto(): void; 
 }
